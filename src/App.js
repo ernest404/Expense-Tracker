@@ -1,6 +1,6 @@
 // this is the main or root or special component: all other components are nested to it.
 
-import Expenses from "./components/Expenses"; //to use a component in another component we have to import it.
+import Expenses from "./components/Expenses/Expenses"; //to use a component in another component we have to import it.
 
 function App() {
   const expenses = [

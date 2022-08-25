@@ -1,6 +1,6 @@
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 // We can make components reusable and display different values by using parameters called props.
 // We can pass data to components by passing it in an attribute
 function ExpenseItem(props) {
