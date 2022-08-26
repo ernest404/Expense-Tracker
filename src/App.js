@@ -1,6 +1,7 @@
 // this is the main or root or special component: all other components are nested to it.
 
 import Expenses from "./components/Expenses/Expenses"; //to use a component in another component we have to import it.
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   const expenses = [
@@ -27,7 +28,7 @@ function App() {
   return (
     //returns jsx a htmlish code: JavaScript XML which is transformed to JS before rendering.
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <Expenses expenses={expenses} />
     </div>
   );
