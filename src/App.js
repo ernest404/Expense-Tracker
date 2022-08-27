@@ -25,11 +25,17 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  function addExpenseHandler(expense) {
+    console.log("In App.js");
+    console.log(expenses);
+  }
   return (
     //returns jsx a htmlish code: JavaScript XML which is transformed to JS before rendering.
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
+      {/*Lifted expenses data up from Expenseform to NewExpress to App the down to Expenses*/}
     </div>
   );
 }
