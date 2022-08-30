@@ -33,12 +33,13 @@ function App() {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     }); /*we use this function when we are updating the previous state */
+    console.log(expense);
   }
   return (
     //returns jsx a htmlish code: JavaScript XML which is transformed to JS before rendering.
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expensebody={expenses} />
+      <Expenses expensesList={expenses} />
       {/*Lifted expenses data up from Expenseform to NewExpense to App the down to Expenses*/}
     </div>
   );
