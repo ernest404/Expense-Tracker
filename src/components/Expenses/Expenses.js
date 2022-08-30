@@ -22,13 +22,11 @@ function Expenses(props) {
           onfilter={onSaveFilterHandler}
           selected={filteredYear}
         />
-        {filteredExpenses.length === 0 ? (
-          <p>No expenses found</p>
-        ) : (
+        {filteredExpenses.length === 0 && <p>No expenses found</p>}
+        {filteredExpenses.length > 0 &&
           filteredExpenses.map((expense) => (
             <ExpenseItem key={expense.id} expenseitem={expense} /> // key prop, allows us add a unique key to a list being rendered this helps react to uniquely place list item during rendering getting rid of performance issues and bugs.
-          ))
-        )}{" "}
+          ))}
         {/*Using a function to dynamically display all values of the expenses array as ExpensesItem. Any changes is the array are automatically updated*/}
       </Card>
     </div>
