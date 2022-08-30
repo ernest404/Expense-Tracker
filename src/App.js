@@ -34,8 +34,8 @@ function App() {
     //returns jsx a htmlish code: JavaScript XML which is transformed to JS before rendering.
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
-      {/*Lifted expenses data up from Expenseform to NewExpress to App the down to Expenses*/}
+      <Expenses expensebody={expenses} />
+      {/*Lifted expenses data up from Expenseform to NewExpense to App the down to Expenses*/}
     </div>
   );
 }

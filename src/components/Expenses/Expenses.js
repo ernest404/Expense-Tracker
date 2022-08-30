@@ -11,10 +11,10 @@ function Expenses(props) {
     <div>
       <Card className="expenses">
         <ExpensesFilter onfilter={onSaveFilterHandler} />
-        <ExpenseItem expense={props.expenses[0]} />
-        <ExpenseItem expense={props.expenses[1]} />
-        <ExpenseItem expense={props.expenses[2]} />
-        <ExpenseItem expense={props.expenses[3]} />
+        {props.expensebody.map((expense) => (
+          <ExpenseItem expense={expense} />
+        ))}{" "}
+        {/*Using a function to dynamically display all values of the expenses array as ExpensesItem. Any changes is the array are automatically updated*/}
       </Card>
     </div>
   );
