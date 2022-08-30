@@ -2,9 +2,10 @@
 
 import Expenses from "./components/Expenses/Expenses"; //to use a component in another component we have to import it.
 import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
 
 function App() {
-  const expenses = [
+  const DUMMYEXPENSES = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -26,9 +27,12 @@ function App() {
     },
   ];
 
+  const [expenses, setExpenses] = useState(DUMMYEXPENSES);
+
   function addExpenseHandler(expense) {
-    console.log("In App.js");
-    console.log(expenses);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    }); /*we use this function when we are updating the previous state */
   }
   return (
     //returns jsx a htmlish code: JavaScript XML which is transformed to JS before rendering.

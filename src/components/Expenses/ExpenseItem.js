@@ -17,7 +17,7 @@ function ExpenseItem(props) {
   return (
     //Multiple elements should be put in brackets. only one root element is allowed per return statement, no side by side elements.
     <Card className="expense-item">
-      <ExpenseDate date={props.expense.date} />
+      {/* <ExpenseDate date={props.expense.date} /> */}
       {/*We are relying the date from App to ExpenseDate */}
       {/*The key used has to match the attribute used to pass the data */}
       {/*Inside curly braces you can run and display values from JS code*/}

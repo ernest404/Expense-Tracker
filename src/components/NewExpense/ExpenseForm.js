@@ -54,15 +54,13 @@ function ExpenseForm(props) {
       date: enteredDate,
     };
 
-    console.log(expenseData);
-
     props.onSaveExpenseData(expenseData); //executes function defined in the parent component: NewExpense
     setEnteredTitle(""); //set the new value to back to initial state
     setEnteredAmount("");
     setEnteredDate("");
   }
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -95,9 +93,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit" onClick={submitHandler}>
-          Add Expense
-        </button>{" "}
+        <button type="submit">Add Expense</button>{" "}
         {/*The form outputs an event whenever the submit button is pressed */}
       </div>
     </form>
