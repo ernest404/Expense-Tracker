@@ -1,8 +1,9 @@
 import "./Expenses.css";
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import React, { useState } from "react";
+import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState("2021");
@@ -15,6 +16,7 @@ function Expenses(props) {
     (expense) => expense.date.getFullYear().toString() === filteredYear
   );
   console.log(props.expensesList);
+
   return (
     <div>
       <Card className="expenses">
@@ -22,12 +24,8 @@ function Expenses(props) {
           onfilter={onSaveFilterHandler}
           selected={filteredYear}
         />
-        {filteredExpenses.length === 0 && <p>No expenses found</p>}
-        {filteredExpenses.length > 0 &&
-          filteredExpenses.map((expense) => (
-            <ExpenseItem key={expense.id} expenseitem={expense} /> // key prop, allows us add a unique key to a list being rendered this helps react to uniquely place list item during rendering getting rid of performance issues and bugs.
-          ))}
-        {/*Using a function to dynamically display all values of the expenses array as ExpensesItem. Any changes is the array are automatically updated*/}
+        <ExpensesChart expenses={filteredExpenses} />
+        <ExpensesList item={filteredExpenses} />
       </Card>
     </div>
   );
